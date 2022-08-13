@@ -1,0 +1,138 @@
+baseURL: 'https://p1at-hugo-blog.pages.dev/'
+languageCode: 'ja-JP'
+
+theme: 'hugo-theme-stack'
+paginate: 5
+
+title: 'Plat Dev'
+
+disqusShortname: hugo-theme-stack
+
+DefaultContentLanguage: 'ja'
+
+hasCJKLanguage: false # ↑がjaなので
+
+permalinks:
+    post: /p/:slug/
+    page: /:slug/
+
+params:
+    mainSections:
+        - post
+    featuredImageField: image
+    rssFullContent: true
+    favicon:
+
+    footer:
+        since: 2022
+        customText: 
+
+    dateFormat:
+        published: 2006 年 1 月 2 日,
+        lastUpdated: 2006 年 1 月 2 日 15:04 JST
+
+    sidebar:
+        emoji: 🦕
+        subtitle: Hugo版のPlatのブログ。何を書くのかは未定。
+        avatar:
+            enabled: true
+            local: false
+            src: 'https://avatars.githubusercontent.com/u/60182057?v=4'
+
+    article:
+        math: false
+        toc: true
+        readingTime: true
+        license:
+            enabled: false
+            # default: Licensed under CC BY-NC-SA 4.0
+
+    widgets:
+        homepage:
+            - type: search
+            - type: archives
+              params:
+                  limit: 5
+            - type: categories
+              params:
+                  limit: 10
+            - type: tag-cloud
+              params:
+                  limit: 10
+        page:
+            - type: toc
+    
+    opengraph:
+        twitter:
+            # Your Twitter username
+            site: p1atdev
+
+            # Available values: summary, summary_large_image
+            card: summary_large_image
+
+    defaultImage:
+        opengraph:
+            enabled: false
+            local: false
+            src:
+
+    colorScheme:
+        # Display toggle
+        toggle: true
+
+        # Available values: auto, light, dark
+        default: auto
+
+    imageProcessing:
+        cover:
+            enabled: true
+        content:
+            enabled: true
+
+### Custom menu
+### See https://docs.stack.jimmycai.com/configuration/custom-menu.html
+### To remove about, archive and search page menu item, remove `menu` field from their FrontMatter
+menu:
+    main: []
+
+    social:
+        - identifier: github
+          name: GitHub
+          url: https://github.com/CaiJimmy/hugo-theme-stack
+          params:
+              icon: brand-github
+
+        - identifier: twitter
+          name: Twitter
+          url: https://twitter.com
+          params:
+              icon: brand-twitter
+
+related:
+    includeNewer: true
+    threshold: 60
+    toLower: false
+    indices:
+        - name: tags
+          weight: 100
+
+        - name: categories
+          weight: 200
+
+markup:
+    goldmark:
+        renderer:
+            ## Set to true if you have HTML content inside Markdown
+            unsafe: false
+    tableOfContents:
+        endLevel: 4
+        ordered: true
+        startLevel: 2
+    highlight:
+        noClasses: false
+        codeFences: true
+        guessSyntax: true
+        lineNoStart: 1
+        lineNos: true
+        lineNumbersInTable: true
+        tabWidth: 4
